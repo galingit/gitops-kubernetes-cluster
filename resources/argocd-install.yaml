@@ -3026,7 +3026,7 @@ spec:
       - command:
         - /shared/argocd-dex
         - rundex
-        image: ghcr.io/dexidp/dex:v2.27.0
+        image: fitxpeuwacr.azurecr.io/gitops-demo/dex:v2.27.0
         resources:
           limits:
             memory: "2Gi"
@@ -3055,7 +3055,7 @@ spec:
         - -n
         - /usr/local/bin/argocd
         - /shared/argocd-dex
-        image: quay.io/argoproj/argocd:v2.1.1
+        image: fitxpeuwacr.azurecr.io/gitops-demo/argocd:v2.1.1
         resources:
           limits:
             memory: "2Gi"
@@ -3115,7 +3115,7 @@ spec:
         - ""
         - --appendonly
         - "no"
-        image: redis:6.2.4-alpine
+        image: fitxpeuwacr.azurecr.io/gitops-demo/redis:6.2.4-alpine
         resources:
           limits:
             memory: "2Gi"
@@ -3244,7 +3244,7 @@ spec:
               key: reposerver.default.cache.expiration
               name: argocd-cmd-params-cm
               optional: true
-        image: quay.io/argoproj/argocd:v2.1.1
+        image: fitxpeuwacr.azurecr.io/gitops-demo/argocd:v2.1.1
         resources:
           limits:
             memory: "2Gi"
@@ -3496,7 +3496,7 @@ spec:
               key: server.default.cache.expiration
               name: argocd-cmd-params-cm
               optional: true
-        image: quay.io/argoproj/argocd:v2.1.1
+        image: fitxpeuwacr.azurecr.io/gitops-demo/argocd:v2.1.1
         resources:
           limits: 
             memory: "2Gi"
@@ -3693,7 +3693,7 @@ spec:
               key: controller.default.cache.expiration
               name: argocd-cmd-params-cm
               optional: true
-        image: quay.io/argoproj/argocd:v2.1.1
+        image: fitxpeuwacr.azurecr.io/gitops-demo/argocd:v2.1.1
         resources:
           limits:
             memory: "2Gi"
