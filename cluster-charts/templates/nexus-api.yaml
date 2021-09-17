@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nexusapi-deployment
+  labels:
+    app: nexusapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nexusapi
+  template:
+    metadata:
+      labels:
+        app: nexusapi
+    spec:
+      containers:
+      - name: nexuxapi
+        image: fitxpeuwacr.azurecr.io/nexusapi
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexusapi
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: nexusapi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexusapi-tls
+spec:
+  ports:
+  - port: 443
+    targetPort: 443
+  selector:
+    app: nexusapi
